@@ -30,7 +30,7 @@ body {
 
 /* HERO */
 .hero {
-  min-height: 100vh;
+  min-height: calc(100vh - 40px);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -87,15 +87,17 @@ body {
 
 /* SECTIONS */
 .section {
+  position: relative;
+  z-index: 2;
   max-width: 900px;
-  margin: auto;
-  padding: 80px 20px;
+  margin: 60px auto;
+  padding: 60px 30px;
+
+  background: rgba(25, 0, 25, 0.6);
+  border-radius: 24px;
+  backdrop-filter: blur(12px);
 }
 
-.section h2 {
-  color: var(--text-light);
-  margin-bottom: 20px;
-}
 
 /* SKILLS */
 .skills span {
@@ -147,14 +149,15 @@ body {
 /* ===== Scroll Reveal ===== */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
+  transform: translateY(30px);
 }
 
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
+
 /* ===== Glow Effects ===== */
 .project-card:hover,
 .skills span:hover {
