@@ -15,10 +15,18 @@
 
 body {
   font-family: "Segoe UI", sans-serif;
-  background: radial-gradient(circle at top, #2B124C, #190019);
+  background: linear-gradient(-45deg, #190019, #2B124C, #522B5B, #190019);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
   color: var(--text-white);
-  line-height: 1.6;
 }
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 
 /* HERO */
 .hero {
@@ -135,4 +143,32 @@ body {
   .hero-buttons {
     justify-content: center;
   }
+}
+/* ===== Scroll Reveal ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ===== Glow Effects ===== */
+.project-card:hover,
+.skills span:hover {
+  box-shadow: 0 0 25px rgba(133, 79, 108, 0.5);
+}
+
+.btn:hover {
+  box-shadow: 0 0 20px rgba(133, 79, 108, 0.6);
+}
+.hero-image img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-image img:hover {
+  transform: rotate(-2deg) scale(1.05);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
 }
